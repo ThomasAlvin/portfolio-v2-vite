@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+}
+
+.animated-fillColor-dark::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  margin-left: 10px;
+  background-color: crimson;
+  transition: width 0.2s ease-in-out;
+  z-index: -1;
+  border-radius: 50px;
+}
+.animated-fillColor-dark:hover::before {
+  background: linear-gradient(to right, rgb(246, 34, 55), rgb(161, 2, 18));
+  width: 90%; /* When you hover, expand the width to create the underline effect */
+  border-radius: 50px;
+}
+.animated-fillColor-dark:hover {
+  z-index: 2;
+}
