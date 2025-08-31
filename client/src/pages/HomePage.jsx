@@ -678,6 +678,88 @@ export default function HomePage() {
                 </Flex>
               </Flex>
             </Flex>
+            <Flex zIndex={1} gap={"50px"}>
+              <Flex w={"50%"} flexDir={"column"} gap={"20px"}>
+                <Heading fontSize={"20px"}>Professional Experience</Heading>
+                <Flex gap={"10px"}>
+                  <Flex flexDir={"column"} alignItems={"center"}>
+                    <Flex
+                      borderRadius={"full"}
+                      bgColor={"#dc143c"}
+                      minW={"16px"}
+                      minH={"16px"}
+                    ></Flex>
+                    <Flex
+                      borderRadius={"full"}
+                      borderRight={"2px solid #dc143c"}
+                      h={"100%"}
+                    ></Flex>
+                  </Flex>
+                  <Flex
+                    p={"10px"}
+                    bg={"white"}
+                    boxShadow={"0px 0px 3px rgba(50,50,93,0.5)"}
+                    flexDir={"column"}
+                    gap={"0px"}
+                  >
+                    <Flex fontSize={"16px"} fontWeight={700}>
+                      Fullstack Web Developer Certificate
+                    </Flex>
+                    <Flex color={"#dc143c"} fontWeight={700}>
+                      Purwadhika Digital Technology School 2023-2024
+                    </Flex>
+                    <Flex color={"#848484"}>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Duis aute irure dolor in reprehenderit in voluptate velit
+                      esse cillum
+                    </Flex>
+                  </Flex>
+                </Flex>
+              </Flex>
+              <Flex w={"50%"} flexDir={"column"} gap={"20px"}>
+                <Heading fontSize={"20px"}>Education</Heading>
+                <Flex gap={"10px"}>
+                  <Flex flexDir={"column"} alignItems={"center"}>
+                    <Flex
+                      borderRadius={"full"}
+                      bgColor={"#dc143c"}
+                      minW={"16px"}
+                      minH={"16px"}
+                    ></Flex>
+                    <Flex
+                      borderRadius={"full"}
+                      borderRight={"2px solid #dc143c"}
+                      h={"100%"}
+                    ></Flex>
+                  </Flex>
+                  <Flex
+                    p={"10px"}
+                    bg={"white"}
+                    boxShadow={"0px 0px 3px rgba(50,50,93,0.5)"}
+                    flexDir={"column"}
+                    gap={"0px"}
+                  >
+                    <Flex fontSize={"16px"} fontWeight={700}>
+                      Fullstack Web Developer Certificate
+                    </Flex>
+                    <Flex color={"#dc143c"} fontWeight={700}>
+                      Purwadhika Digital Technology School 2023-2024
+                    </Flex>
+                    <Flex color={"#848484"}>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Duis aute irure dolor in reprehenderit in voluptate velit
+                      esse cillum
+                    </Flex>
+                  </Flex>
+                </Flex>
+              </Flex>
+            </Flex>
           </Flex>
         </Flex>
         {/* 4th Section */}

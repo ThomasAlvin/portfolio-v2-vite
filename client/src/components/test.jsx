@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 export default function CursorHighlightBackground() {
   const [position, setPosition] = useState({ x: -9999, y: -9999 });
-
+  const [lightGlimmer, setLightGlimmer] = useState(false);
   useEffect(() => {
     const handleMouseMove = (e) => {
       setPosition({ x: e.clientX, y: e.clientY });
@@ -12,6 +12,11 @@ export default function CursorHighlightBackground() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
+  useState(() => {
+    setInterval(() => {
+      setLightGlimmer((prevState) => !prevState);
+    }, 1200);
+  }, []);
   return (
     <Box
       position="fixed"
@@ -29,8 +34,10 @@ export default function CursorHighlightBackground() {
           left: 0,
           width: "100%",
           height: "100%",
-          background: `radial-gradient(circle 300px at ${position.x}px ${position.y}px, rgba(255, 255, 255, 0.43), transparent 80%)`,
-          transition: "background 0.05s ease-out",
+          background: `radial-gradient(circle 20px at ${position.x}px ${position.y}px, rgba(255, 255, 255, 1), transparent 80%)`,
+          transform: `scale(${lightGlimmer ? 1 : 1.5})`,
+          transformOrigin: `${position.x}px ${position.y}px`, // <- THIS fixes it
+          transition: "transform 1.2s ease, background 0.05s ease-out",
         },
       }}
     />

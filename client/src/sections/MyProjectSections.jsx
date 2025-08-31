@@ -177,7 +177,7 @@ export default function MyProjectsSection() {
         justify={"center"}
         alignItems={"center"}
         flexDir={"column"}
-        gap={"60px"}
+        gap={"80px"}
       >
         <Flex
           justify={"center"}
