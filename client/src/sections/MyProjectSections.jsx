@@ -187,7 +187,9 @@ export default function MyProjectsSection() {
           alignItems={"center"}
         >
           <Flex className="reveal">
-            <Heading fontSize={"48px"}>My Projects</Heading>
+            <Heading fontSize={{ base: "40px", sm: "48px" }}>
+              My Projects
+            </Heading>
           </Flex>
           <Flex
             pos={"absolute"}
@@ -198,25 +200,50 @@ export default function MyProjectsSection() {
             className="revealUnderlineLeft"
           />
         </Flex>
-        <Flex w={"100%"} flexDir={"column"} gap={"150px"}>
+        <Flex
+          w={"100%"}
+          px={"20px"}
+          flexDir={"column"}
+          gap={{ base: "100px", sm: "150px" }}
+        >
           {myProjects.map((val) => (
-            <Center>
-              <Flex w={"100%"} gap={"40px"}>
-                <Flex flexDir={"column"} position={"relative"} gap={"20px"}>
+            <Center alignItems={"center"}>
+              <Flex
+                alignItems={"center"}
+                flexDir={{ base: "column", lg: "row" }}
+                w={"100%"}
+                gap={{ base: "60px", lg: "40px" }}
+              >
+                <Flex
+                  flex={1}
+                  w={"100%"}
+                  flexDir={"column"}
+                  position={"relative"}
+                  gap={"20px"}
+                >
                   <CardStack items={val.projectImages} />
                 </Flex>
-                <Flex flexDir={"column"} justify={"space-between"}>
+                <Flex
+                  flex={1}
+                  maxW={"800px"}
+                  flexDir={"column"}
+                  justify={"space-between"}
+                >
                   <Flex flexDir={"column"} gap={"20px"}>
                     <Heading
                       className="revealLeft"
                       bg="linear-gradient(to right,rgb(255, 64, 83), #bf081a)"
                       bgClip={"text"}
-                      fontSize={"32px"}
+                      fontSize={{ base: "24px", sm: "32px" }}
                       color={"#dc143c"}
                     >
                       {val.title}
                     </Heading>
-                    <Flex gap={"10px"} className="revealLeft-500">
+                    <Flex
+                      gap={"10px"}
+                      flexWrap={"wrap"}
+                      className="revealLeft-500"
+                    >
                       {val.techStacks.map((val) => (
                         <Flex
                           whiteSpace={"nowrap"}

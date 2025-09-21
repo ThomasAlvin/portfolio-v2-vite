@@ -56,7 +56,7 @@ import GlowingIcon from "../components/GlowingIcon";
 import { GrMysql } from "react-icons/gr";
 import { SiChakraui } from "react-icons/si";
 import HomeSectionNavigator from "../components/HomeSectionNavigator";
-import { IoLogoJavascript } from "react-icons/io5";
+import { IoBriefcaseSharp, IoLogoJavascript } from "react-icons/io5";
 import LiftedIcon from "../components/LiftedIcon";
 import { BiGlassesAlt } from "react-icons/bi";
 import {
@@ -70,6 +70,11 @@ import { MacbookScroll } from "../aceternityComponents/Macbook";
 import MyProjectsSection from "../sections/MyProjectSections";
 import CurrentProjectsSection from "../sections/CurrentProjectsSection";
 import ContainerTextFlip from "../aceternityComponents/ContainerTextFlip";
+import { BsMortarboardFill } from "react-icons/bs";
+import professionalExpereinceArray from "../const/professionalExperienceArray";
+import professionalExperienceArray from "../const/professionalExperienceArray";
+import renderTextSegments from "../utils/renderTextSegments";
+import educationArray from "../const/educationArray";
 export default function HomePage() {
   const bubbleVariants = {
     hidden: {
@@ -216,7 +221,9 @@ export default function HomePage() {
       <Flex flexDir={"column"}>
         {/* 1st Section */}
         <Flex
-          pt={"50px"}
+          px={"20px"}
+          pt={{ base: "0px", md: "50px" }}
+          pb={{ base: "40px", md: "0px" }}
           w={"100%"}
           justify={"center"}
           alignItems={"center"}
@@ -240,10 +247,19 @@ export default function HomePage() {
             maxW={"1200px"}
             w={"100%"}
             pt={"100px"}
-            flexDir={"column"}
+            justify={"center"}
           >
-            <Flex pt={"60px"}>
-              <Flex w={"50%"} pt={"20px"} flexDir={"column"}>
+            <Flex
+              pt={{ base: "30px", md: "60px" }}
+              alignItems={{ base: "center", md: "stretch" }}
+              flexDir={{ base: "column-reverse", md: "row" }}
+              gap={{ base: "20px", md: "0px" }}
+            >
+              <Flex
+                w={{ base: "100%", md: "50%" }}
+                pt={"30px"}
+                flexDir={"column"}
+              >
                 <Flex className="reveal">
                   <Flex
                     position="relative"
@@ -274,7 +290,9 @@ export default function HomePage() {
                   flexDir={"column"}
                 >
                   <Flex className="reveal" pt={"10px"}>
-                    <Heading fontSize={"48px"}>Thomas Alvin Yeo</Heading>
+                    <Heading fontSize={{ base: "32px", md: "48px" }}>
+                      Thomas Alvin Yeo
+                    </Heading>
                   </Flex>
                   <Flex
                     pos={"absolute"}
@@ -292,47 +310,61 @@ export default function HomePage() {
                   high-performance web applications using React and Laravel.
                 </Flex>
                 <Flex
-                  className="reveal3"
-                  pt={"20px"}
-                  gap={"10px"}
-                  alignItems={"center"}
+                  gap={{ base: "20px", md: "0px" }}
+                  alignItems={{ base: "center", md: "stretch" }}
+                  flexDir={{ base: "row", md: "column" }}
                 >
-                  <a href="/Thomas-Alvin-Yeo-CV.pdf">
-                    <Button
-                      className="animated-fillColor-dark"
-                      h={"auto"}
-                      px={"20px"}
-                      py={"10px"}
-                      borderRadius={"50px"}
-                      fontSize={"18px"}
-                    >
-                      <Flex alignItems={"center"} gap={"5px"}>
-                        <Flex>Resume</Flex>
-                        <Flex fontSize={"20px"}>
-                          <IoMdDownload />
+                  <Flex
+                    className="reveal3"
+                    pt={"20px"}
+                    gap={"10px"}
+                    alignItems={"center"}
+                  >
+                    <a href="/Thomas-Alvin-Yeo-CV.pdf">
+                      <Button
+                        className="animated-fillColor-dark"
+                        h={"auto"}
+                        px={{ base: "16px", md: "20px" }}
+                        py={{ base: "8px", md: "10px" }}
+                        borderRadius={"50px"}
+                        fontSize={{ base: "16px", md: "18px" }}
+                      >
+                        <Flex alignItems={"center"} gap={"5px"}>
+                          <Flex>Resume</Flex>
+                          <Flex fontSize={"20px"}>
+                            <IoMdDownload />
+                          </Flex>
                         </Flex>
-                      </Flex>
-                    </Button>
-                  </a>
-                </Flex>
-                <Flex
-                  className="reveal3"
-                  gap={"40px"}
-                  pt={"20px"}
-                  fontSize={"28px"}
-                >
-                  {socialMediaIcons.map((val) => (
-                    <Link href={val.link} target="_blank">
-                      <LiftedIcon label={val.label} icon={val.icon} />
-                    </Link>
-                  ))}
+                      </Button>
+                    </a>
+                  </Flex>
+                  <Flex
+                    className="reveal3"
+                    gap={{ base: "20px", sm: "40px" }}
+                    pt={"20px"}
+                    fontSize={"28px"}
+                  >
+                    {socialMediaIcons.map((val) => (
+                      <Link href={val.link} target="_blank">
+                        <LiftedIcon label={val.label} icon={val.icon} />
+                      </Link>
+                    ))}
+                  </Flex>
                 </Flex>
               </Flex>
-              <Flex position={"relative"} w={"50%"} pt={"60px"}>
+              <Flex
+                position={"relative"}
+                w={{ base: "100%", md: "50%" }}
+                pt={"60px"}
+              >
                 <Image
-                  px={"100px"}
-                  minH={"450px"}
+                  objectFit={"cover"}
+                  pt={"20px"}
+                  px={{ base: "50px", md: "100px" }}
+                  // minH={"450px"}
                   w={"100%"}
+                  bg={"#16161d"}
+                  clipPath={"ellipse(40% 50% at 50% 50%)"}
                   src={FotoDiri}
                 ></Image>
                 <GlowingIcon
@@ -354,7 +386,7 @@ export default function HomePage() {
                   icon={FaLaravel}
                 />
                 <GlowingIcon
-                  top={"-10%"}
+                  top={"-5%"}
                   right={"45%"}
                   color={"#efd81d"}
                   icon={IoLogoJavascript}
@@ -385,6 +417,7 @@ export default function HomePage() {
         {/* 2nd Section */}
         <Flex
           id="about"
+          px={"20px"}
           w={"100%"}
           justify={"center"}
           alignItems={"center"}
@@ -395,13 +428,24 @@ export default function HomePage() {
           bgSize="auto"
           bgPosition="top left"
         >
-          <Flex color={"black"} maxW={"1200px"} w={"100%"} flexDir={"column"}>
-            <Flex py={"60px"} alignItems={"center"}>
+          <Flex
+            color={"black"}
+            px={"20px"}
+            maxW={"1200px"}
+            w={"100%"}
+            flexDir={"column"}
+          >
+            <Flex
+              py={"60px"}
+              flexDir={{ base: "column", md: "row" }}
+              gap={{ base: "50px", md: "0px" }}
+              alignItems={"center"}
+            >
               <Flex
                 ref={section2Ref}
                 className="revealLeft"
-                w={"50%"}
-                px={"60px"}
+                w={{ base: "100%", md: "50%" }}
+                px={{ base: "20px", md: "60px" }}
               >
                 <Flex
                   position={"relative"}
@@ -429,7 +473,7 @@ export default function HomePage() {
                         animate={controls}
                         variants={bubbleVariants}
                         borderRadius="full"
-                        w="60px"
+                        w={"12%"}
                         aspectRatio={1}
                         bg="linear-gradient(to right,rgb(255, 64, 83), #bf081a)"
                         position="absolute"
@@ -439,22 +483,26 @@ export default function HomePage() {
                         bottom={val.bottom}
                         alignItems="center"
                         justify="center"
-                        fontSize="36px"
+                        // fontSize={"100%"}
                       >
-                        <Icon as={val.icon} />
+                        <Box w={"60%"} aspectRatio={1}>
+                          <Icon w="100%" h="100%" as={val.icon} />
+                        </Box>
                       </MotionFlex>
                     ))}
                   </Flex>
                 </Flex>
               </Flex>
-              <Flex w={"50%"} flexDir={"column"}>
+              <Flex w={{ base: "100%", md: "50%" }} flexDir={"column"}>
                 <Flex
                   width={"fit-content"}
                   position={"relative"}
                   flexDir={"column"}
                 >
                   <Flex className="reveal">
-                    <Heading fontSize={"48px"}>A bit about me</Heading>
+                    <Heading fontSize={{ base: "32px", md: "48px" }}>
+                      A bit about me
+                    </Heading>
                   </Flex>
                   <Flex
                     pos={"absolute"}
@@ -528,15 +576,23 @@ export default function HomePage() {
             </svg>
           </Flex>
           <Flex
-            py={"80px"}
+            px={"20px"}
+            py={{ base: "40px", md: "80px" }}
             color={"black"}
             maxW={"1200px"}
             w={"100%"}
             flexDir={"column"}
             gap={"40px"}
           >
-            <Flex fontSize={"48px"} alignItems={"center"} className="reveal">
-              <Heading fontSize={"48px"}>I am a&nbsp;</Heading>
+            <Flex
+              fontSize={{ base: "28px", md: "40px" }}
+              flexDir={{ base: "column", md: "row" }}
+              alignItems={{ base: "start", md: "center" }}
+              className="reveal"
+            >
+              <Heading fontSize={{ base: "28px", md: "30px" }}>
+                I am a&nbsp;
+              </Heading>
               <ContainerTextFlip
                 words={[
                   "Frontend Developer",
@@ -545,142 +601,174 @@ export default function HomePage() {
                 ]}
               />
             </Flex>
-            <Flex gap={"20px"} justify={"space-between"}>
+            <Grid
+              templateColumns={{
+                base: "repeat(1,1fr)",
+                sm: "repeat(auto-fit,minmax(350px,1fr))",
+              }}
+              rowGap={"40px"}
+              columnGap={"20px"}
+            >
+              <GridItem w={"100%"} display={"flex"} justifyContent={"center"}>
+                <Flex
+                  w={{ base: "auto", md: "100%" }}
+                  maxW={{ base: "450px", sm: "auto" }}
+                  className="reveal2"
+                  flexDir={"column"}
+                  gap={"20px"}
+                >
+                  <Flex
+                    bg={"white"}
+                    flexDir={"column"}
+                    gap={"10px"}
+                    border={"2px solid #bababa"}
+                    p={"10px"}
+                  >
+                    <Flex fontSize={"48px"} color={"#01d1f7"}>
+                      <FaReact />
+                    </Flex>
+                    <Heading fontSize={"20px"}>Frontend Developer</Heading>
+                    <Flex gap={"10px"}>
+                      <Flex
+                        alignItems={"center"}
+                        color={"#848484"}
+                        flexDir={"column"}
+                        gap={"5px"}
+                      >
+                        <Flex>{"<h3>"}</Flex>
+                        <Flex w={"1px"} h={"100%"} bg={"#bababa"}></Flex>
+                        <Flex>{"</h3>"}</Flex>
+                      </Flex>
+                      <Flex py={"24px"}>
+                        Frontend Developer with a strong foundation in React,
+                        Tailwind and other frontend libraries, focused on
+                        building responsive, dynamic, and accessible web
+                        applications.
+                      </Flex>
+                    </Flex>
+                  </Flex>
+                  <Flex flexWrap={"wrap"} gap={"10px"}>
+                    <TechStackTags label={"9.0/10.0"}>Javascript</TechStackTags>
+                    <TechStackTags label={"8.6/10.0"}>HTML</TechStackTags>
+                    <TechStackTags label={"8.0/10.0"}>CSS</TechStackTags>
+                    <TechStackTags label={"9.0/10.0"}>React</TechStackTags>
+                    <TechStackTags label={"8.5/10.0"}>Vite</TechStackTags>
+                    <TechStackTags label={"9.1/10.0"}>Chakra UI</TechStackTags>
+                    <TechStackTags label={"7.6/10.0"}>Tailwind</TechStackTags>
+                    <TechStackTags label={"7.0/10.0"}>Daisy UI</TechStackTags>
+                    <TechStackTags label={"8.5/10.0"}>Bootstrap</TechStackTags>
+                  </Flex>
+                </Flex>
+              </GridItem>
+              <GridItem w={"100%"} display={"flex"} justifyContent={"center"}>
+                <Flex
+                  w={{ base: "auto", md: "100%" }}
+                  maxW={{ base: "450px", sm: "auto" }}
+                  className="reveal2"
+                  flexDir={"column"}
+                  gap={"20px"}
+                >
+                  <Flex
+                    bg={"white"}
+                    border={"2px solid #bababa"}
+                    p={"10px"}
+                    flexDir={"column"}
+                    gap={"10px"}
+                  >
+                    <Flex fontSize={"48px"} color={"#f72a1c"}>
+                      <FaLaravel />
+                    </Flex>
+                    <Heading fontSize={"20px"}>Backend Developer</Heading>
+                    <Flex gap={"10px"}>
+                      <Flex
+                        alignItems={"center"}
+                        color={"#848484"}
+                        flexDir={"column"}
+                        gap={"5px"}
+                      >
+                        <Flex>{"<h3>"}</Flex>
+                        <Flex w={"1px"} h={"100%"} bg={"#bababa"}></Flex>
+                        <Flex>{"</h3>"}</Flex>
+                      </Flex>
+                      <Flex py={"24px"}>
+                        Backend Developer skilled in PHP, Laravel, MySQL, and
+                        etc. I build scalable and secure APIs, optimize
+                        databases, and develop high-performance server-side
+                        applications.
+                      </Flex>
+                    </Flex>
+                  </Flex>
+                  <Flex flexWrap={"wrap"} gap={"10px"}>
+                    <TechStackTags label={"8.5/10.0"}>PHP</TechStackTags>
+                    <TechStackTags label={"9.0/10.0"}>Laravel</TechStackTags>
+                    <TechStackTags label={"9.0/10.0"}>MySQL</TechStackTags>
+                    <TechStackTags label={"8.2/10.0"}>Node.js</TechStackTags>
+                    <TechStackTags label={"7.8/10.0"}>Express.js</TechStackTags>
+                    <TechStackTags label={"6.0/10.0"}>Firebase</TechStackTags>
+                  </Flex>
+                </Flex>
+              </GridItem>
+              <GridItem w={"100%"} display={"flex"} justifyContent={"center"}>
+                <Flex
+                  w={{ base: "auto", md: "100%" }}
+                  maxW={{ base: "450px", sm: "auto" }}
+                  className="reveal2"
+                  flexDir={"column"}
+                  gap={"20px"}
+                >
+                  <Flex
+                    bg={"white"}
+                    border={"2px solid #bababa"}
+                    p={"10px"}
+                    flexDir={"column"}
+                    gap={"10px"}
+                  >
+                    <Flex fontSize={"48px"} color={"#848484"}>
+                      <FaLaptop />
+                    </Flex>
+                    <Heading fontSize={"20px"}>Novice UI/UX Designer</Heading>
+                    <Flex gap={"10px"}>
+                      <Flex
+                        alignItems={"center"}
+                        color={"#848484"}
+                        flexDir={"column"}
+                        gap={"5px"}
+                      >
+                        <Flex>{"<h3>"}</Flex>
+                        <Flex w={"1px"} h={"100%"} bg={"#bababa"}></Flex>
+                        <Flex>{"</h3>"}</Flex>
+                      </Flex>
+                      <Flex py={"24px"}>
+                        Novice UI/UX Designer passionate about creating
+                        intuitive and appealing experiences. I focus on
+                        user-centered design, accessibility, and enhance
+                        usability and engagement.
+                      </Flex>
+                    </Flex>
+                  </Flex>
+                  <Flex flexWrap={"wrap"} gap={"10px"}>
+                    <TechStackTags label={"6.0/10.0"}>Figma</TechStackTags>
+                    <TechStackTags label={"5.0/10.0"}>Canva</TechStackTags>
+                  </Flex>
+                </Flex>
+              </GridItem>
+            </Grid>
+            <Flex
+              zIndex={1}
+              flexDir={{ base: "column", md: "row" }}
+              gap={"50px"}
+            >
               <Flex
-                w={"33%"}
-                className="reveal2"
+                w={{ base: "100%", md: "50%" }}
                 flexDir={"column"}
                 gap={"20px"}
               >
-                <Flex
-                  bg={"white"}
-                  flexDir={"column"}
-                  gap={"10px"}
-                  border={"2px solid #bababa"}
-                  p={"10px"}
-                >
-                  <Flex fontSize={"48px"} color={"#01d1f7"}>
-                    <FaReact />
+                <Heading fontSize={"20px"}>
+                  <Flex alignItems={"center"} gap={"10px"}>
+                    <IoBriefcaseSharp />
+                    Professional Experience
                   </Flex>
-                  <Heading fontSize={"20px"}>Frontend Developer</Heading>
-                  <Flex gap={"10px"}>
-                    <Flex
-                      alignItems={"center"}
-                      color={"#848484"}
-                      flexDir={"column"}
-                      gap={"5px"}
-                    >
-                      <Flex>{"<h3>"}</Flex>
-                      <Flex w={"1px"} h={"100%"} bg={"#bababa"}></Flex>
-                      <Flex>{"</h3>"}</Flex>
-                    </Flex>
-                    <Flex py={"24px"}>
-                      Frontend Developer with a strong foundation in React,
-                      Tailwind and other frontend libraries, focused on building
-                      responsive, dynamic, and accessible web applications.
-                    </Flex>
-                  </Flex>
-                </Flex>
-                <Flex flexWrap={"wrap"} gap={"10px"}>
-                  <TechStackTags label={"9.0/10.0"}>Javascript</TechStackTags>
-                  <TechStackTags label={"8.6/10.0"}>HTML</TechStackTags>
-                  <TechStackTags label={"8.0/10.0"}>CSS</TechStackTags>
-                  <TechStackTags label={"9.0/10.0"}>React</TechStackTags>
-                  <TechStackTags label={"9.1/10.0"}>Chakra UI</TechStackTags>
-                  <TechStackTags label={"7.6/10.0"}>Tailwind</TechStackTags>
-                  <TechStackTags label={"7.0/10.0"}>Daisy UI</TechStackTags>
-                  <TechStackTags label={"8.5/10.0"}>Bootstrap</TechStackTags>
-                </Flex>
-              </Flex>
-              <Flex
-                w={"33%"}
-                className="reveal2"
-                flexDir={"column"}
-                gap={"20px"}
-              >
-                <Flex
-                  bg={"white"}
-                  border={"2px solid #bababa"}
-                  p={"10px"}
-                  flexDir={"column"}
-                  gap={"10px"}
-                >
-                  <Flex fontSize={"48px"} color={"#f72a1c"}>
-                    <FaLaravel />
-                  </Flex>
-                  <Heading fontSize={"20px"}>Backend Developer</Heading>
-                  <Flex gap={"10px"}>
-                    <Flex
-                      alignItems={"center"}
-                      color={"#848484"}
-                      flexDir={"column"}
-                      gap={"5px"}
-                    >
-                      <Flex>{"<h3>"}</Flex>
-                      <Flex w={"1px"} h={"100%"} bg={"#bababa"}></Flex>
-                      <Flex>{"</h3>"}</Flex>
-                    </Flex>
-                    <Flex py={"24px"}>
-                      Backend Developer skilled in PHP, Laravel, MySQL, and etc.
-                      I build scalable and secure APIs, optimize databases, and
-                      develop high-performance server-side applications.
-                    </Flex>
-                  </Flex>
-                </Flex>
-                <Flex flexWrap={"wrap"} gap={"10px"}>
-                  <TechStackTags label={"8.5/10.0"}>PHP</TechStackTags>
-                  <TechStackTags label={"9.0/10.0"}>Laravel</TechStackTags>
-                  <TechStackTags label={"9.0/10.0"}>MySQL</TechStackTags>
-                  <TechStackTags label={"8.2/10.0"}>Node.js</TechStackTags>
-                  <TechStackTags label={"7.8/10.0"}>Express.js</TechStackTags>
-                  <TechStackTags label={"6.0/10.0"}>Firebase</TechStackTags>
-                </Flex>
-              </Flex>
-              <Flex
-                w={"33%"}
-                className="reveal2"
-                flexDir={"column"}
-                gap={"20px"}
-              >
-                <Flex
-                  bg={"white"}
-                  border={"2px solid #bababa"}
-                  p={"10px"}
-                  flexDir={"column"}
-                  gap={"10px"}
-                >
-                  <Flex fontSize={"48px"} color={"#848484"}>
-                    <FaLaptop />
-                  </Flex>
-                  <Heading fontSize={"20px"}>Novice UI/UX Designer</Heading>
-                  <Flex gap={"10px"}>
-                    <Flex
-                      alignItems={"center"}
-                      color={"#848484"}
-                      flexDir={"column"}
-                      gap={"5px"}
-                    >
-                      <Flex>{"<h3>"}</Flex>
-                      <Flex w={"1px"} h={"100%"} bg={"#bababa"}></Flex>
-                      <Flex>{"</h3>"}</Flex>
-                    </Flex>
-                    <Flex py={"24px"}>
-                      Novice UI/UX Designer passionate about creating intuitive
-                      and appealing experiences. I focus on user-centered
-                      design, accessibility, and enhance usability and
-                      engagement.
-                    </Flex>
-                  </Flex>
-                </Flex>
-                <Flex flexWrap={"wrap"} gap={"10px"}>
-                  <TechStackTags label={"6.0/10.0"}>Figma</TechStackTags>
-                  <TechStackTags label={"5.0/10.0"}>Canva</TechStackTags>
-                </Flex>
-              </Flex>
-            </Flex>
-            <Flex zIndex={1} gap={"50px"}>
-              <Flex w={"50%"} flexDir={"column"} gap={"20px"}>
-                <Heading fontSize={"20px"}>Professional Experience</Heading>
+                </Heading>
                 <Flex gap={"10px"}>
                   <Flex flexDir={"column"} alignItems={"center"}>
                     <Flex
@@ -695,32 +783,51 @@ export default function HomePage() {
                       h={"100%"}
                     ></Flex>
                   </Flex>
-                  <Flex
-                    p={"10px"}
-                    bg={"white"}
-                    boxShadow={"0px 0px 3px rgba(50,50,93,0.5)"}
-                    flexDir={"column"}
-                    gap={"0px"}
-                  >
-                    <Flex fontSize={"16px"} fontWeight={700}>
-                      Fullstack Web Developer Certificate
+                  {professionalExperienceArray.map((exp) => (
+                    <Flex flexDir={"column"} gap={"20px"}>
+                      <Flex
+                        p={"10px"}
+                        bg={"white"}
+                        boxShadow={"0px 0px 3px rgba(50,50,93,0.5)"}
+                        flexDir={"column"}
+                        gap={"0px"}
+                      >
+                        <Flex fontSize={"16px"} fontWeight={700}>
+                          {exp.workPlace}
+                        </Flex>
+                        <Flex color={"#dc143c"} fontWeight={700}>
+                          {exp.jobTitle}
+                        </Flex>
+                        <Flex
+                          color={"#848484"}
+                          whiteSpace="normal"
+                          flexWrap={"wrap"}
+                        >
+                          <span>{renderTextSegments(exp.description)}</span>
+                        </Flex>
+                      </Flex>
+                      <Flex flexWrap={"wrap"} gap={"10px"}>
+                        {exp.techStacks.map((tech) => (
+                          <TechStackTags label={tech.rate}>
+                            {tech.title}
+                          </TechStackTags>
+                        ))}
+                      </Flex>
                     </Flex>
-                    <Flex color={"#dc143c"} fontWeight={700}>
-                      Purwadhika Digital Technology School 2023-2024
-                    </Flex>
-                    <Flex color={"#848484"}>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse cillum
-                    </Flex>
-                  </Flex>
+                  ))}
                 </Flex>
               </Flex>
-              <Flex w={"50%"} flexDir={"column"} gap={"20px"}>
-                <Heading fontSize={"20px"}>Education</Heading>
+              <Flex
+                w={{ base: "100%", md: "50%" }}
+                flexDir={"column"}
+                gap={"20px"}
+              >
+                <Heading fontSize={"20px"}>
+                  <Flex alignItems={"center"} gap={"10px"}>
+                    <BsMortarboardFill />
+                    Education
+                  </Flex>
+                </Heading>
                 <Flex gap={"10px"}>
                   <Flex flexDir={"column"} alignItems={"center"}>
                     <Flex
@@ -735,28 +842,39 @@ export default function HomePage() {
                       h={"100%"}
                     ></Flex>
                   </Flex>
-                  <Flex
-                    p={"10px"}
-                    bg={"white"}
-                    boxShadow={"0px 0px 3px rgba(50,50,93,0.5)"}
-                    flexDir={"column"}
-                    gap={"0px"}
-                  >
-                    <Flex fontSize={"16px"} fontWeight={700}>
-                      Fullstack Web Developer Certificate
+
+                  {educationArray.map((exp) => (
+                    <Flex flexDir={"column"} gap={"20px"}>
+                      <Flex
+                        p={"10px"}
+                        bg={"white"}
+                        boxShadow={"0px 0px 3px rgba(50,50,93,0.5)"}
+                        flexDir={"column"}
+                        gap={"0px"}
+                      >
+                        <Flex fontSize={"16px"} fontWeight={700}>
+                          {exp.workPlace}
+                        </Flex>
+                        <Flex color={"#dc143c"} fontWeight={700}>
+                          {exp.jobTitle}
+                        </Flex>
+                        <Flex
+                          color={"#848484"}
+                          whiteSpace="normal"
+                          flexWrap={"wrap"}
+                        >
+                          <span>{renderTextSegments(exp.description)}</span>
+                        </Flex>
+                      </Flex>
+                      <Flex flexWrap={"wrap"} gap={"10px"}>
+                        {exp.techStacks.map((tech) => (
+                          <TechStackTags label={tech.rate}>
+                            {tech.title}
+                          </TechStackTags>
+                        ))}
+                      </Flex>
                     </Flex>
-                    <Flex color={"#dc143c"} fontWeight={700}>
-                      Purwadhika Digital Technology School 2023-2024
-                    </Flex>
-                    <Flex color={"#848484"}>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse cillum
-                    </Flex>
-                  </Flex>
+                  ))}
                 </Flex>
               </Flex>
             </Flex>

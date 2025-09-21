@@ -54,16 +54,22 @@ export const CardStack = ({ items, offset, scaleFactor }) => {
   };
 
   return (
-    <Flex flexDir={"column"} position={"relative"}>
+    <Flex
+      flexDir={"column"}
+      alignItems={"center"}
+      justify={"center"}
+      w={"100%"}
+      position={"relative"}
+    >
       <motion.div
-        style={{ width: "600px" }}
+        style={{ maxWidth: "600px", width: "100%" }}
         className="flex-col"
         whileHover={{ scale: 1.05 }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
         // overflow="hidden"
         // border={"4px solid #848484"}
       >
-        <Flex className="relative w-full" h={"337px"}>
+        <Flex className="relative w-full" h={{ base: "250px", sm: "337px" }}>
           {cards.map((card, index) => {
             return (
               <motion.div
@@ -96,9 +102,11 @@ export const CardStack = ({ items, offset, scaleFactor }) => {
         className="reveal2"
         position={"absolute"}
         justify={"space-between"}
+        alignItems={"center"}
+        maxW={"600px"}
         w={"100%"}
         bottom={"-45px"}
-        left={0}
+        left={{ base: "auto", lg: 0 }}
       >
         <AnimatePresence mode="wait">
           <motion.div
@@ -108,7 +116,11 @@ export const CardStack = ({ items, offset, scaleFactor }) => {
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
           >
-            <Flex fontWeight={700} color="#848484" fontSize="24px">
+            <Flex
+              fontWeight={700}
+              color="#848484"
+              fontSize={{ base: "20px", sm: "24px" }}
+            >
               {cards[0].pageName}
             </Flex>
           </motion.div>

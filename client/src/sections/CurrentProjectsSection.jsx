@@ -38,7 +38,7 @@ export default function CurrentProjectsSection() {
       {" "}
       <ParticleBackground id={"1"} particles={200} hasLink={false} />
       <Flex
-        gap={"60px"}
+        gap={{ base: "0px", sm: "60px" }}
         flexDir={"column"}
         justify={"center"}
         alignItems={"center"}
@@ -51,7 +51,9 @@ export default function CurrentProjectsSection() {
           alignItems={"center"}
         >
           <Flex className="reveal">
-            <Heading fontSize={"48px"}>Current Project</Heading>
+            <Heading fontSize={{ base: "40px", sm: "48px" }}>
+              Current Project
+            </Heading>
           </Flex>
           <Flex
             pos={"absolute"}
@@ -62,12 +64,17 @@ export default function CurrentProjectsSection() {
             className="revealUnderlineLeft"
           />
         </Flex>
-        <Flex h={"870px"} justify={"center"}>
+        <Flex
+          pb={{ base: "30px", sm: "150px", md: "350px" }}
+          justify={"center"}
+          maxW={"200px"}
+        >
           <MacbookScroll title={"My Latest Project"} />
         </Flex>
       </Flex>
       <Flex
-        w={"768px"}
+        maxW={"768px"}
+        px={{ base: "20px", md: "0px" }}
         className="reveal3"
         // justify={"center"}
         gap={"30px"}
@@ -77,12 +84,12 @@ export default function CurrentProjectsSection() {
         <Heading
           bg="linear-gradient(to right,rgb(255, 64, 83), #bf081a)"
           bgClip={"text"}
-          fontSize={"32px"}
+          fontSize={{ base: "28px", sm: "32px" }}
           color={"#dc143c"}
         >
           {currentProjectDetails.title}
         </Heading>
-        <Flex gap={"10px"}>
+        <Flex gap={"10px"} flexWrap={"wrap"}>
           {currentProjectDetails.techStacks.map((val) => (
             <Flex
               bg={"#373740"}

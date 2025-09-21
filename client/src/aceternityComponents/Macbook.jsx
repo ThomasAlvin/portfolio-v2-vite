@@ -47,12 +47,12 @@ export const MacbookScroll = ({ src, showGradient, title, badge }) => {
   const scaleX = useTransform(
     scrollYProgress,
     [0, 0.1],
-    [1.2, isMobile ? 1 : 1.5]
+    [1.2, isMobile ? 1.2 : 1.5]
   );
   const scaleY = useTransform(
     scrollYProgress,
     [0, 0.1],
-    [0.6, isMobile ? 1 : 1.5]
+    [0.6, isMobile ? 1.2 : 1.5]
   );
   const translate = useTransform(scrollYProgress, [0, 0.5], [0, 400]);
   const rotate = useTransform(scrollYProgress, [0.08, 0.1, 0.4], [-28, -28, 0]);
@@ -67,7 +67,7 @@ export const MacbookScroll = ({ src, showGradient, title, badge }) => {
     <Flex
       ref={ref}
       flexDir={"column"}
-      className="shrink-0 scale-[0.35] transform  items-center justify-start py-0 [perspective:800px] sm:scale-50 md:scale-100 md:py-0"
+      className="shrink-0 scale-[0.55] transform  items-center justify-start py-0 [perspective:800px] sm:scale-70 md:scale-100 md:py-0"
     >
       {/* <motion.Flex
         style={{

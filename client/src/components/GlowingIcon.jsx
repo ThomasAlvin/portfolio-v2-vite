@@ -19,7 +19,7 @@ export default function GlowingIcon({
       left={left}
       bottom={bottom}
       color={"#545454"}
-      fontSize={"60px"}
+      fontSize={{ base: "40px", sm: "60px" }}
     >
       <Box
         _groupHover={{ opacity: 1 }}

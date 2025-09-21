@@ -34,7 +34,7 @@ export default function ParticleBackground({ id, hasLink, particles = 40 }) {
       },
       links: {
         enable: hasLink,
-        distance: 200,
+        distance: 150,
       },
       move: {
         enable: true,
@@ -44,7 +44,7 @@ export default function ParticleBackground({ id, hasLink, particles = 40 }) {
         },
       },
       size: {
-        value: 2,
+        value: 1,
       },
     },
   };

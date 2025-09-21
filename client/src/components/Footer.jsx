@@ -24,8 +24,16 @@ export default function Footer() {
     >
       <Flex w={"100%"} justify={"center"}>
         <Flex maxW={"1200px"} gap={"30px"} flexDir={"column"}>
-          <Flex px={"30px"}>
-            <Flex w={"50%"} flexDir={"column"} gap={"30px"}>
+          <Flex
+            px={"30px"}
+            flexDir={{ base: "column", md: "row" }}
+            gap={{ base: "30px", sm: "0px" }}
+          >
+            <Flex
+              w={{ base: "100%", md: "50%" }}
+              flexDir={"column"}
+              gap={"30px"}
+            >
               <Flex fontWeight={700} fontSize={"20px"}>
                 Connect With Me
               </Flex>
@@ -73,7 +81,7 @@ export default function Footer() {
                 </Flex>
               </Flex>
             </Flex>
-            <Flex flexDir={"column"} w={"50%"}>
+            <Flex flexDir={"column"} w={{ base: "100%", md: "50%" }}>
               <Flex fontWeight={700} fontSize={"20px"}>
                 Thomas Alvin Yeo
               </Flex>
@@ -86,16 +94,22 @@ export default function Footer() {
           </Flex>
           <Flex h={"1px"} bg={"white"}></Flex>
           <Flex
+            px={"30px"}
             fontWeight={700}
             fontSize={"16px"}
-            justify={"center"}
+            justify={{ base: "start", sm: "center" }}
             gap={"5px"}
             alignItems={"center"}
           >
-            <Flex>
-              <FaRegCopyright />
+            <Flex flexDir={{ base: "column", sm: "row" }}>
+              <Flex gap={"5px"} alignItems={"center"}>
+                <Flex>
+                  <FaRegCopyright />
+                </Flex>
+                <Flex>Copyright 2024.&nbsp;</Flex>
+              </Flex>
+              <Flex>Made by Thomas Alvin Yeo</Flex>
             </Flex>
-            <Flex>Copyright 2024. Made by Thomas Alvin Yeo</Flex>
           </Flex>
         </Flex>
       </Flex>

@@ -27,7 +27,7 @@ export default function HomeSectionNavigator() {
       p={"5px"}
       bg="linear-gradient(to right,rgb(255, 64, 83), #bf081a)"
       position={"fixed"}
-      right={"50px"}
+      right={"3%"}
       bottom={"5vh"}
       color={"white"}
       gap={"30px"}
