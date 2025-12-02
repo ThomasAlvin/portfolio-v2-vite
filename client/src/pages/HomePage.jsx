@@ -10,14 +10,15 @@ import {
   Icon,
   Image,
   Link,
+  Spinner,
   Tag,
   Text,
 } from "@chakra-ui/react";
 import MainLayout from "../Layouts/MainLayout";
 import { LuPhoneCall } from "react-icons/lu";
-import FotoDiri from "../assets/images/Foto-diri-cropped3.png";
-import FotoDiri2 from "../assets/images/Foto-diri-standing-zoomed2-removebg.png";
-import CubeBackground from "../assets/images/cube-background-white-grey.png";
+import FotoDiri from "../assets/images/Foto-diri-cropped3.webp";
+import FotoDiri2 from "../assets/images/Foto-diri-standing-zoomed2-removebg.webp";
+import CubeBackground from "../assets/images/cube-background-white-grey.webp";
 import testImage1 from "../assets/projectImages/Digipas Admin/Add Admin Page.png";
 import testImage2 from "../assets/projectImages/Digipas Admin/Add Parcel Box Page.png";
 import testImage3 from "../assets/projectImages/Digipas Admin/Add Products Page.png";
@@ -43,7 +44,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
 import TechStackTags from "../components/TechStackTags";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Counter from "../components/Counter";
 import RollUpText from "../components/Testing";
 import { MdSettings } from "react-icons/md";
@@ -76,6 +77,8 @@ import professionalExperienceArray from "../const/professionalExperienceArray";
 import renderTextSegments from "../utils/renderTextSegments";
 import educationArray from "../const/educationArray";
 export default function HomePage() {
+  const [loadedHeroImageCount, setLoadedHeroImageCount] = useState(0);
+  const allHeroImageLoaded = loadedHeroImageCount >= 2;
   const bubbleVariants = {
     hidden: {
       scale: 0,
@@ -118,6 +121,11 @@ export default function HomePage() {
   const controls = useAnimation(); // for triggering animations
   const section2Ref = useRef(null);
   const isInView = useInView(section2Ref, { amount: 0.5, once: true }); // run only once
+  function handleImageLoad() {
+    console.log("triggered");
+
+    setLoadedHeroImageCount((prev) => prev + 1);
+  }
   useEffect(() => {
     console.log(isInView);
 
@@ -215,7 +223,7 @@ export default function HomePage() {
       reset: false, // Change to true if you want the animation to replay on scroll up
     });
   }, []);
-  return (
+  return allHeroImageLoaded ? (
     <MainLayout>
       <ScrollProgressBar />
       <Flex flexDir={"column"}>
@@ -983,5 +991,15 @@ export default function HomePage() {
       </Flex>
       <HomeSectionNavigator />
     </MainLayout>
+  ) : (
+    <Flex w={"100vw"} h={"100vh"} justify={"center"} alignItems={"center"}>
+      <Flex display={"none"}>
+        <Image onLoad={handleImageLoad} src={FotoDiri}></Image>
+        <Image onLoad={handleImageLoad} src={FotoDiri2}></Image>
+      </Flex>
+      <Flex>
+        <Spinner size={"xl"} color="#dc143c" />
+      </Flex>
+    </Flex>
   );
 }

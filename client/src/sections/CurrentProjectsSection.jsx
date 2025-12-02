@@ -1,7 +1,6 @@
 import { Button, Flex, Grid, GridItem, Heading } from "@chakra-ui/react";
 import { InfiniteMovingCards } from "../aceternityComponents/InfiniteMovingCards ";
 import { MacbookScroll } from "../aceternityComponents/Macbook";
-import CubeBackground from "../assets/images/cube-background-white-grey.png";
 import ParticleBackground from "../components/ParticleBackground";
 
 export default function CurrentProjectsSection() {

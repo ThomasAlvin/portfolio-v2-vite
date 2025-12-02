@@ -28,7 +28,7 @@ import { IconCommand } from "@tabler/icons-react";
 import { IconCaretLeftFilled } from "@tabler/icons-react";
 import { IconCaretDownFilled } from "@tabler/icons-react";
 import { Flex, transform } from "@chakra-ui/react";
-import lotoManagementDashboardPage from "../assets/projectImages/LOTO Management System/dashboard-page.png";
+import lotoManagementDashboardPage from "../assets/projectImages/LOTO Management System/dashboard-page.webp";
 
 export const MacbookScroll = ({ src, showGradient, title, badge }) => {
   const ref = useRef(null);

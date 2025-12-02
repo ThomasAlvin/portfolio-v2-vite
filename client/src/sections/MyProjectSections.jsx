@@ -9,26 +9,26 @@ import {
 } from "@chakra-ui/react";
 import { InfiniteMovingCards } from "../aceternityComponents/InfiniteMovingCards ";
 import { MacbookScroll } from "../aceternityComponents/Macbook";
-import CubeBackground from "../assets/images/cube-background-white-grey.png";
+import CubeBackground from "../assets/images/cube-background-white-grey.webp";
 import ParticleBackground from "../components/ParticleBackground";
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 
-import digipasAdminDashboardPage from "../assets/projectImages/Digipas Admin/Dashboard Page.png";
-import digipasAdminEditProductsPage16x9 from "../assets/projectImages/Digipas Admin/Edit Products Page 16x9.png";
-import digipasAdminOrderDetailsPage from "../assets/projectImages/Digipas Admin/Order Details Page.png";
-import digipasAdminOrdersPage from "../assets/projectImages/Digipas Admin/Orders Page.png";
-import digipasAdminProductsPage from "../assets/projectImages/Digipas Admin/Products Page.png";
-import digipasStoreCheckoutPage16x9 from "../assets/projectImages/Digipas Store/Checkout Page 16x9.png";
-import digipasStoreCheckoutPage from "../assets/projectImages/Digipas Store/Checkout Page.png";
-import digipasStoreMyCartPage16x9 from "../assets/projectImages/Digipas Store/My Cart Page 16x9.png";
-import digipasStoreMyCartPage from "../assets/projectImages/Digipas Store/My Cart Page.png";
-import digipasStoreProductDetailsPage16x9 from "../assets/projectImages/Digipas Store/Product Details Page 16x9.png";
-import digipasStoreProductDetailsPage from "../assets/projectImages/Digipas Store/Product Details Page.png";
-import digipasStoreMyOrdersPage from "../assets/projectImages/Digipas Store/My Orders Page.png";
-import gramediaBookStoreCartPage from "../assets/projectImages/Gramedia Book Store Copy/bookstore-cartpage.png";
-import gramediaBookStoreProductDetailPage from "../assets/projectImages/Gramedia Book Store Copy/bookstore-productdetail.png";
-import gramediaBookStoreHomePage from "../assets/projectImages/Gramedia Book Store Copy/bookstore-homepage.png";
-import gramediaBookStoreProfilePage from "../assets/projectImages/Gramedia Book Store Copy/bookstore-profilepage.png";
+import digipasAdminDashboardPage from "../assets/projectImages/Digipas Admin/Dashboard Page.webp";
+import digipasAdminEditProductsPage16x9 from "../assets/projectImages/Digipas Admin/Edit Products Page 16x9.webp";
+import digipasAdminOrderDetailsPage from "../assets/projectImages/Digipas Admin/Order Details Page.webp";
+import digipasAdminOrdersPage from "../assets/projectImages/Digipas Admin/Orders Page.webp";
+import digipasAdminProductsPage from "../assets/projectImages/Digipas Admin/Products Page.webp";
+import digipasStoreCheckoutPage16x9 from "../assets/projectImages/Digipas Store/Checkout Page 16x9.webp";
+import digipasStoreCheckoutPage from "../assets/projectImages/Digipas Store/Checkout Page.webp";
+import digipasStoreMyCartPage16x9 from "../assets/projectImages/Digipas Store/My Cart Page 16x9.webp";
+import digipasStoreMyCartPage from "../assets/projectImages/Digipas Store/My Cart Page.webp";
+import digipasStoreProductDetailsPage16x9 from "../assets/projectImages/Digipas Store/Product Details Page 16x9.webp";
+import digipasStoreProductDetailsPage from "../assets/projectImages/Digipas Store/Product Details Page.webp";
+import digipasStoreMyOrdersPage from "../assets/projectImages/Digipas Store/My Orders Page.webp";
+import gramediaBookStoreCartPage from "../assets/projectImages/Gramedia Book Store Copy/bookstore-cartpage.webp";
+import gramediaBookStoreProductDetailPage from "../assets/projectImages/Gramedia Book Store Copy/bookstore-productdetail.webp";
+import gramediaBookStoreHomePage from "../assets/projectImages/Gramedia Book Store Copy/bookstore-homepage.webp";
+import gramediaBookStoreProfilePage from "../assets/projectImages/Gramedia Book Store Copy/bookstore-profilepage.webp";
 
 import { motion } from "framer-motion";
 import { CardStack } from "../aceternityComponents/CardStack";
@@ -140,7 +140,6 @@ export default function MyProjectsSection() {
           image: gramediaBookStoreCartPage,
           pageName: "Cart Page",
         },
-
         {
           id: 3,
           image: gramediaBookStoreProductDetailPage,
@@ -151,7 +150,6 @@ export default function MyProjectsSection() {
           image: gramediaBookStoreProfilePage,
           pageName: "Profile Page",
         },
-        ,
       ],
     },
   ];

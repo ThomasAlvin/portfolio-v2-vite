@@ -5,7 +5,7 @@ import {
   FaLinkedin,
   FaRegCopyright,
 } from "react-icons/fa";
-import triangleBackground from "../assets/images/medium-triangles-crimson.png";
+import triangleBackground from "../assets/images/medium-triangles-crimson.webp";
 import { IoIosMail } from "react-icons/io";
 import { AiFillInstagram } from "react-icons/ai";
 
