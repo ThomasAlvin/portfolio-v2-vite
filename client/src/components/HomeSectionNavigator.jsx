@@ -1,13 +1,5 @@
 import { Flex, Tooltip } from "@chakra-ui/react";
-import { BsFillTriangleFill } from "react-icons/bs";
-import { FaDiamond } from "react-icons/fa6";
 import { IoArrowUpCircleOutline } from "react-icons/io5";
-import {
-  TbHexagonFilled,
-  TbPentagonFilled,
-  TbSquareFilled,
-  TbTriangleFilled,
-} from "react-icons/tb";
 
 export default function HomeSectionNavigator() {
   const handleScrollToTop = () => {

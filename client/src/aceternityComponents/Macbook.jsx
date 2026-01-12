@@ -1,34 +1,34 @@
-import React, { useEffect, useRef, useState } from "react";
+import { Flex } from "@chakra-ui/react";
+import {
+  IconBrightnessDown,
+  IconBrightnessUp,
+  IconCaretDownFilled,
+  IconCaretLeftFilled,
+  IconCaretRightFilled,
+  IconCaretUpFilled,
+  IconChevronUp,
+  IconCommand,
+  IconMicrophone,
+  IconMoon,
+  IconPlayerSkipForward,
+  IconPlayerTrackNext,
+  IconPlayerTrackPrev,
+  IconSearch,
+  IconTable,
+  IconVolume,
+  IconVolume2,
+  IconVolume3,
+  IconWorld,
+} from "@tabler/icons-react";
 import {
   motion,
   useMotionValueEvent,
   useScroll,
   useTransform,
 } from "motion/react";
-import { cn } from "../lib/utils";
-import {
-  IconBrightnessDown,
-  IconBrightnessUp,
-  IconCaretRightFilled,
-  IconCaretUpFilled,
-  IconChevronUp,
-  IconMicrophone,
-  IconMoon,
-  IconPlayerSkipForward,
-  IconPlayerTrackNext,
-  IconPlayerTrackPrev,
-  IconTable,
-  IconVolume,
-  IconVolume2,
-  IconVolume3,
-} from "@tabler/icons-react";
-import { IconSearch } from "@tabler/icons-react";
-import { IconWorld } from "@tabler/icons-react";
-import { IconCommand } from "@tabler/icons-react";
-import { IconCaretLeftFilled } from "@tabler/icons-react";
-import { IconCaretDownFilled } from "@tabler/icons-react";
-import { Flex, transform } from "@chakra-ui/react";
+import { useEffect, useRef, useState } from "react";
 import lotoManagementDashboardPage from "../assets/projectImages/LOTO Management System/dashboard-page.webp";
+import { cn } from "../lib/utils";
 
 export const MacbookScroll = ({ src, showGradient, title, badge }) => {
   const ref = useRef(null);
@@ -47,12 +47,12 @@ export const MacbookScroll = ({ src, showGradient, title, badge }) => {
   const scaleX = useTransform(
     scrollYProgress,
     [0, 0.1],
-    [1.2, isMobile ? 1.2 : 1.5]
+    [1.2, isMobile ? 1.2 : 1.5],
   );
   const scaleY = useTransform(
     scrollYProgress,
     [0, 0.1],
-    [0.6, isMobile ? 1.2 : 1.5]
+    [0.6, isMobile ? 1.2 : 1.5],
   );
   const translate = useTransform(scrollYProgress, [0, 0.5], [0, 400]);
   const rotate = useTransform(scrollYProgress, [0.08, 0.1, 0.4], [-28, -28, 0]);
@@ -67,7 +67,7 @@ export const MacbookScroll = ({ src, showGradient, title, badge }) => {
     <Flex
       ref={ref}
       flexDir={"column"}
-      className="shrink-0 scale-[0.55] transform  items-center justify-start py-0 [perspective:800px] sm:scale-70 md:scale-100 md:py-0"
+      className="shrink-0 scale-[0.55] transform items-center justify-start py-0 [perspective:800px] sm:scale-70 md:scale-100 md:py-0"
     >
       {/* <motion.Flex
         style={{
@@ -145,18 +145,18 @@ export const Lid = ({ scaleX, scaleY, rotate, translate, src }) => {
           transformStyle: "preserve-3d",
           transformOrigin: "top",
         }}
-        className="absolute inset-0 h-80 w-[32rem] rounded-2xl  p-2"
+        className="absolute inset-0 h-80 w-[32rem] rounded-2xl p-2"
       >
         <div className="absolute inset-0 rounded-lg" />
         <Flex
           borderRadius={"20px"}
           border={"10px solid black"}
-          className="inset-0 absolute"
+          className="absolute inset-0"
         >
           <img
             src={lotoManagementDashboardPage}
             alt="aceternity logo"
-            className=" inset-0 h-full w-full rounded-lg"
+            className="inset-0 h-full w-full rounded-lg"
           />
         </Flex>
       </motion.div>
@@ -538,13 +538,13 @@ export const KBtn = ({
     <div
       className={cn(
         "[transform:translateZ(0)] rounded-[4px] p-[0.5px] [will-change:transform]",
-        backlit && "bg-white/[0.2] shadow-xl shadow-white"
+        backlit && "bg-white/[0.2] shadow-xl shadow-white",
       )}
     >
       <div
         className={cn(
           "flex h-6 w-6 items-center justify-center rounded-[3.5px] bg-[#0A090D]",
-          className
+          className,
         )}
         style={{
           boxShadow:
@@ -555,7 +555,7 @@ export const KBtn = ({
           className={cn(
             "flex w-full flex-col items-center justify-center text-[5px] text-neutral-200",
             childrenClassName,
-            backlit && "text-white"
+            backlit && "text-white",
           )}
         >
           {children}

@@ -1,44 +1,22 @@
-import {
-  Button,
-  Center,
-  Flex,
-  Grid,
-  GridItem,
-  Heading,
-  Image,
-} from "@chakra-ui/react";
-import { InfiniteMovingCards } from "../aceternityComponents/InfiniteMovingCards ";
-import { MacbookScroll } from "../aceternityComponents/Macbook";
+import { Center, Flex, Heading } from "@chakra-ui/react";
 import CubeBackground from "../assets/images/cube-background-white-grey.webp";
-import ParticleBackground from "../components/ParticleBackground";
-import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 
 import digipasAdminDashboardPage from "../assets/projectImages/Digipas Admin/Dashboard Page.webp";
 import digipasAdminEditProductsPage16x9 from "../assets/projectImages/Digipas Admin/Edit Products Page 16x9.webp";
 import digipasAdminOrderDetailsPage from "../assets/projectImages/Digipas Admin/Order Details Page.webp";
 import digipasAdminOrdersPage from "../assets/projectImages/Digipas Admin/Orders Page.webp";
-import digipasAdminProductsPage from "../assets/projectImages/Digipas Admin/Products Page.webp";
 import digipasStoreCheckoutPage16x9 from "../assets/projectImages/Digipas Store/Checkout Page 16x9.webp";
-import digipasStoreCheckoutPage from "../assets/projectImages/Digipas Store/Checkout Page.webp";
 import digipasStoreMyCartPage16x9 from "../assets/projectImages/Digipas Store/My Cart Page 16x9.webp";
-import digipasStoreMyCartPage from "../assets/projectImages/Digipas Store/My Cart Page.webp";
-import digipasStoreProductDetailsPage16x9 from "../assets/projectImages/Digipas Store/Product Details Page 16x9.webp";
-import digipasStoreProductDetailsPage from "../assets/projectImages/Digipas Store/Product Details Page.webp";
 import digipasStoreMyOrdersPage from "../assets/projectImages/Digipas Store/My Orders Page.webp";
+import digipasStoreProductDetailsPage16x9 from "../assets/projectImages/Digipas Store/Product Details Page 16x9.webp";
 import gramediaBookStoreCartPage from "../assets/projectImages/Gramedia Book Store Copy/bookstore-cartpage.webp";
-import gramediaBookStoreProductDetailPage from "../assets/projectImages/Gramedia Book Store Copy/bookstore-productdetail.webp";
 import gramediaBookStoreHomePage from "../assets/projectImages/Gramedia Book Store Copy/bookstore-homepage.webp";
+import gramediaBookStoreProductDetailPage from "../assets/projectImages/Gramedia Book Store Copy/bookstore-productdetail.webp";
 import gramediaBookStoreProfilePage from "../assets/projectImages/Gramedia Book Store Copy/bookstore-profilepage.webp";
 
-import { motion } from "framer-motion";
 import { CardStack } from "../aceternityComponents/CardStack";
-import {
-  IoIosArrowDropleftCircle,
-  IoIosArrowDroprightCircle,
-} from "react-icons/io";
 
 export default function MyProjectsSection() {
-  const MotionFlex = motion(Flex);
   const myProjects = [
     {
       title: "E-Commerce Admin Panel",

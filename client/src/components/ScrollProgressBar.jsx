@@ -1,6 +1,6 @@
 // ScrollProgressBar.jsx
+import { Box, Progress } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { Progress, Box, Flex, Center } from "@chakra-ui/react";
 
 function ScrollProgressBar() {
   const [scrollPercent, setScrollPercent] = useState(0);

@@ -1,4 +1,4 @@
-import { Box, Flex, Icon, Tooltip } from "@chakra-ui/react";
+import { Flex, Icon, Tooltip } from "@chakra-ui/react";
 
 export default function LiftedIcon({ icon, label, bgColor }) {
   return (

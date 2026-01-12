@@ -1,17 +1,23 @@
 import { Flex, Link } from "@chakra-ui/react";
-import {
-  FaGithub,
-  FaInstagramSquare,
-  FaLinkedin,
-  FaRegCopyright,
-} from "react-icons/fa";
-import triangleBackground from "../assets/images/medium-triangles-crimson.webp";
-import { IoIosMail } from "react-icons/io";
+import { useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
 import { AiFillInstagram } from "react-icons/ai";
+import { FaGithub, FaLinkedin, FaRegCopyright } from "react-icons/fa";
+import { IoIosMail } from "react-icons/io";
+import triangleBackground from "../assets/images/medium-triangles-crimson.webp";
 
-export default function Footer() {
+export default function Footer({ onActive }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.6 });
+
+  useEffect(() => {
+    if (isInView) {
+      onActive("contact");
+    }
+  }, [isInView, onActive]);
   return (
     <Flex
+      ref={ref}
       id="contact"
       w={"100%"}
       color={"white"}

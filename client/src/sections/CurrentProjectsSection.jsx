@@ -1,5 +1,4 @@
-import { Button, Flex, Grid, GridItem, Heading } from "@chakra-ui/react";
-import { InfiniteMovingCards } from "../aceternityComponents/InfiniteMovingCards ";
+import { Flex, Heading } from "@chakra-ui/react";
 import { MacbookScroll } from "../aceternityComponents/Macbook";
 import ParticleBackground from "../components/ParticleBackground";
 

@@ -1,5 +1,5 @@
 import { Flex } from "@chakra-ui/react";
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import CountUp from "react-countup";
 
 export default function Counter() {
@@ -14,7 +14,7 @@ export default function Counter() {
           observer.unobserve(counterRef.current); // Stop observing after animation
         }
       },
-      { threshold: 0.5 } // Trigger when 50% is visible
+      { threshold: 0.5 }, // Trigger when 50% is visible
     );
 
     if (counterRef.current) {

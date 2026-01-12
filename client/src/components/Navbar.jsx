@@ -1,15 +1,4 @@
-import {
-  Button,
-  Collapse,
-  Flex,
-  Heading,
-  Link,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Collapse, Flex, Heading, Link, useDisclosure } from "@chakra-ui/react";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 export default function Navbar() {

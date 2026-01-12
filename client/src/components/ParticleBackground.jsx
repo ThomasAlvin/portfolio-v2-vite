@@ -1,7 +1,7 @@
-import { useEffect, useMemo, useState } from "react";
+import { Box } from "@chakra-ui/react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
-import { Box } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 export default function ParticleBackground({ id, hasLink, particles = 40 }) {
   const [init, setInit] = useState(false);
 

@@ -1,7 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { Flex, IconButton, Image } from "@chakra-ui/react";
 import { AnimatePresence, motion } from "motion/react";
-import { Button, Flex, Heading, IconButton, Image } from "@chakra-ui/react";
-import testImage2 from "../assets/projectImages/Digipas Admin/Add Parcel Box Page.png";
+import { useRef, useState } from "react";
 import {
   IoIosArrowDropleftCircle,
   IoIosArrowDroprightCircle,
@@ -11,7 +10,6 @@ let interval;
 
 export const CardStack = ({ items, offset, scaleFactor }) => {
   const [isCooldown, setIsCooldown] = useState(false);
-  const MotionFlex = motion(Flex);
   const switchCooldownTime = 200;
   const CARD_OFFSET = offset || 15;
   const SCALE_FACTOR = scaleFactor || 0.06;
@@ -74,7 +72,7 @@ export const CardStack = ({ items, offset, scaleFactor }) => {
             return (
               <motion.div
                 key={card.id}
-                className="absolute w-full h-full dark:bg-black bg-white  rounded-3xl p-4 shadow-xl border-[10px] border-solid border-[#848484] dark:border-white/[0.1]  shadow-black/[0.1] dark:shadow-white/[0.05] flex flex-col justify-between ..."
+                className="absolute flex h-full w-full flex-col justify-between rounded-3xl border-[10px] border-solid border-[#848484] bg-white p-4 shadow-xl shadow-black/[0.1] dark:border-white/[0.1] dark:bg-black dark:shadow-white/[0.05] ..."
                 style={{
                   border: "2px solid #848484",
                   // boxShadow: "0px 0px 3px rgba(50,50,93,0.5)",

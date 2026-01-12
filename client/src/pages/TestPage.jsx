@@ -1,6 +1,4 @@
 import { Flex } from "@chakra-ui/react";
-import ParticleBackground from "../components/ParticleBackground";
-import CursorHighlightBackground from "../components/test";
 import { motion } from "framer-motion";
 export default function TestPage() {
   return (
@@ -11,7 +9,7 @@ export default function TestPage() {
       position="relative"
       zIndex={1} // Ensure content appears above both background layers
     >
-      <div className="flex justify-center items-center h-screen bg-sky-100">
+      <div className="flex h-screen items-center justify-center bg-sky-100">
         <motion.svg
           width="250"
           height="200"
