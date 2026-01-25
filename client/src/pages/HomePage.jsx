@@ -1395,7 +1395,7 @@ const MyProjectsSection = memo(({ id, onActive }) => {
     },
   ];
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.6 });
+  const isInView = useInView(ref, { amount: 0.2 });
 
   useEffect(() => {
     if (isInView) {
@@ -1406,6 +1406,7 @@ const MyProjectsSection = memo(({ id, onActive }) => {
     <>
       <Flex
         id="projects"
+        ref={ref}
         color={"black"}
         backgroundImage={`${CubeBackground}`}
         zIndex={2}
@@ -1428,7 +1429,6 @@ const MyProjectsSection = memo(({ id, onActive }) => {
           gap={"40px"}
         >
           <Flex
-            ref={ref}
             justify={"center"}
             width={"fit-content"}
             position={"relative"}

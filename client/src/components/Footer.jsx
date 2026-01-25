@@ -8,7 +8,7 @@ import triangleBackground from "../assets/images/medium-triangles-crimson.webp";
 
 export default function Footer({ onActive }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.6 });
+  const isInView = useInView(ref, { amount: 0.3 });
 
   useEffect(() => {
     if (isInView) {
@@ -26,7 +26,7 @@ export default function Footer({ onActive }) {
       bgPosition="top left"
       flexDir={"column"}
       justify={"center"}
-      py={"50px"}
+      py={"150px"}
     >
       <Flex w={"100%"} justify={"center"}>
         <Flex maxW={"1200px"} gap={"30px"} flexDir={"column"}>
