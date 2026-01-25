@@ -643,7 +643,7 @@ const AboutSection = memo(({ id, onActive }) => {
 });
 const SkillSection = memo(({ id, onActive }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.6 });
+  const isInView = useInView(ref, { amount: 0.2 });
 
   useEffect(() => {
     if (isInView) {
