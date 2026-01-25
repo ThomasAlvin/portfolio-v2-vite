@@ -101,9 +101,8 @@ export const CardStack = ({ items, offset, scaleFactor }) => {
         position={"absolute"}
         justify={"space-between"}
         alignItems={"center"}
-        maxW={"600px"}
         w={"100%"}
-        bottom={"-45px"}
+        bottom={{ base: "-35px", md: "-45px" }}
         left={{ base: "auto", lg: 0 }}
       >
         <AnimatePresence mode="wait">
@@ -117,7 +116,7 @@ export const CardStack = ({ items, offset, scaleFactor }) => {
             <Flex
               fontWeight={700}
               color="#848484"
-              fontSize={{ base: "20px", sm: "24px" }}
+              fontSize={{ base: "16px", sm: "20px", md: "24px" }}
             >
               {cards[0].pageName}
             </Flex>
@@ -131,7 +130,7 @@ export const CardStack = ({ items, offset, scaleFactor }) => {
           <IconButton
             minW={"auto"}
             h={"auto"}
-            fontSize={"32px"}
+            fontSize={{ base: "24px", sm: "28px", md: "32px" }}
             bg={"transparent"}
             color={"inherit"}
             cursor={"pointer"}
@@ -146,7 +145,7 @@ export const CardStack = ({ items, offset, scaleFactor }) => {
           <IconButton
             w={"auto"}
             h={"auto"}
-            fontSize={"32px"}
+            fontSize={{ base: "24px", sm: "28px", md: "32px" }}
             bg={"transparent"}
             color={"inherit"}
             cursor={"pointer"}

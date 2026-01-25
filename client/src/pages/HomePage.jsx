@@ -8,12 +8,16 @@ import {
   Heading,
   Icon,
   Image,
-  Link,
+  Link as ChakraLink,
 } from "@chakra-ui/react";
 import MainLayout from "../Layouts/MainLayout";
 import FotoDiri from "../assets/images/Foto-diri-cropped3.webp";
 import FotoDiri2 from "../assets/images/Foto-diri-standing-zoomed2-removebg.webp";
 import CubeBackground from "../assets/images/cube-background-white-grey.webp";
+import lotoDemoDashboardPage from "../assets/projectImages/LOTO Management System Demo/dashboard-page.webp";
+import lotoDemoMemberListPage from "../assets/projectImages/LOTO Management System Demo/member-list-page.webp";
+import lotoDemoCreateWorkFlowPanel from "../assets/projectImages/LOTO Management System Demo/create-work-flow-panel.webp";
+import lotoDemoReportDetailsPage from "../assets/projectImages/LOTO Management System Demo/report-details-page.webp";
 import digipasAdminDashboardPage from "../assets/projectImages/Digipas Admin/Dashboard Page.webp";
 import digipasAdminEditProductsPage16x9 from "../assets/projectImages/Digipas Admin/Edit Products Page 16x9.webp";
 import digipasAdminOrderDetailsPage from "../assets/projectImages/Digipas Admin/Order Details Page.webp";
@@ -28,7 +32,7 @@ import gramediaBookStoreProductDetailPage from "../assets/projectImages/Gramedia
 import gramediaBookStoreProfilePage from "../assets/projectImages/Gramedia Book Store Copy/bookstore-profilepage.webp";
 
 import { motion, useAnimation, useInView } from "framer-motion";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { memo, useEffect, useMemo, useRef, useState } from "react";
 import { BiGlassesAlt } from "react-icons/bi";
 import { BsMortarboardFill } from "react-icons/bs";
 import {
@@ -40,6 +44,8 @@ import {
   FaLinkedin,
   FaReact,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
 import { GrMysql } from "react-icons/gr";
 import { IoLogoGameControllerB, IoMdDownload } from "react-icons/io";
 import { IoBriefcaseSharp, IoLogoJavascript } from "react-icons/io5";
@@ -64,6 +70,8 @@ import TechStackTags from "../components/TechStackTags";
 import educationArray from "../const/educationArray";
 import professionalExperienceArray from "../const/professionalExperienceArray";
 import renderTextSegments from "../utils/renderTextSegments";
+import { StickyScroll } from "@/components/ui/StickyScroll";
+import { getSkillIcon } from "../utils/getSkillIcon";
 const MotionFlex = motion(Flex);
 export default function HomePage() {
   const [loadedHeroImageCount, setLoadedHeroImageCount] = useState(0);
@@ -164,6 +172,8 @@ export default function HomePage() {
       reset: false, // Change to true if you want the animation to replay on scroll up
     });
   }, []);
+
+  console.log("homePage");
   return (
     // return allHeroImageLoaded ? (
     <MainLayout
@@ -204,7 +214,7 @@ export default function HomePage() {
     // );
   );
 }
-function HomeSection({ id, onActive }) {
+const HomeSection = memo(({ id, onActive }) => {
   const socialMediaIcons = [
     {
       label: "Facebook",
@@ -354,9 +364,9 @@ function HomeSection({ id, onActive }) {
                 fontSize={"28px"}
               >
                 {socialMediaIcons.map((val) => (
-                  <Link href={val.link} target="_blank">
+                  <ChakraLink href={val.link} target="_blank">
                     <LiftedIcon label={val.label} icon={val.icon} />
-                  </Link>
+                  </ChakraLink>
                 ))}
               </Flex>
             </Flex>
@@ -423,11 +433,12 @@ function HomeSection({ id, onActive }) {
       </Flex>
     </Flex>
   );
-}
-function AboutSection({ id, onActive }) {
+});
+const AboutSection = memo(({ id, onActive }) => {
   const controls = useAnimation();
   const section2Ref = useRef(null);
   const isInViewInitial = useInView(section2Ref, { amount: 0.5 }); // run only once
+  console.log("aboutSection");
 
   useEffect(() => {
     if (isInViewInitial) {
@@ -629,8 +640,8 @@ function AboutSection({ id, onActive }) {
       </Flex>
     </Flex>
   );
-}
-function SkillSection({ id, onActive }) {
+});
+const SkillSection = memo(({ id, onActive }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.6 });
 
@@ -639,6 +650,7 @@ function SkillSection({ id, onActive }) {
       onActive(id);
     }
   }, [isInView, id, onActive]);
+  console.log("skillSection");
   return (
     <Flex
       ref={ref}
@@ -950,8 +962,8 @@ function SkillSection({ id, onActive }) {
       </Flex>
     </Flex>
   );
-}
-function MetricSection({ id, onActive }) {
+});
+const MetricSection = memo(({ id, onActive }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.6 });
 
@@ -1043,8 +1055,8 @@ function MetricSection({ id, onActive }) {
       </Flex>
     </Flex>
   );
-}
-function CurrentProjectSection({ id, onActive }) {
+});
+const CurrentProjectSection = memo(({ id, onActive }) => {
   const currentProjectDetails = {
     title: "LOTO Management System",
     techStacks: [
@@ -1168,11 +1180,144 @@ function CurrentProjectSection({ id, onActive }) {
       </Flex>
     </Flex>
   );
-}
-function MyProjectsSection({ id, onActive }) {
+});
+const MyProjectsSection = memo(({ id, onActive }) => {
+  const content = [
+    {
+      title: "Collaborative Editing",
+      description:
+        "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
+      content: (
+        <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white">
+          Collaborative Editing
+        </div>
+      ),
+    },
+    {
+      title: "Real time changes",
+      description:
+        "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
+      content: (
+        <div className="flex h-full w-full items-center justify-center text-white">
+          <img
+            src="/linear.webp"
+            width={300}
+            height={300}
+            className="h-full w-full object-cover"
+            alt="linear board demo"
+          />
+        </div>
+      ),
+    },
+    {
+      title: "Version control",
+      description:
+        "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+      content: (
+        <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] text-white">
+          Version control
+        </div>
+      ),
+    },
+    {
+      title: "Running out of content",
+      description:
+        "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+      content: (
+        <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white">
+          Running out of content
+        </div>
+      ),
+    },
+  ];
   const myProjects = [
     {
+      id: 1,
+      title: "LOTO Workflow Management System Demo",
+      projectType: "Personal",
+      techStacks: [
+        "React",
+        "Chakra UI",
+        "HTML",
+        "CSS",
+        "Javascript",
+        "Laravel",
+        "PHP",
+        "MySQL",
+      ],
+      description:
+        "LOTO Management System is a full-featured web application designed to streamline and secure the Lockout/Tagout (LOTO) safety process used in industrial environments. This system ensures compliance with safety regulations by guiding users through a standardized, multi-step procedure for isolating hazardous energy during maintenance and servicing operations.",
+      projectImages: [
+        {
+          id: 1,
+          image: lotoDemoDashboardPage,
+          pageName: "Dashboard Page",
+        },
+        {
+          id: 2,
+          image: lotoDemoReportDetailsPage,
+          pageName: "Report Details Page",
+        },
+
+        {
+          id: 3,
+          image: lotoDemoCreateWorkFlowPanel,
+          pageName: "Create Work Flow Panel",
+        },
+        {
+          id: 4,
+          image: lotoDemoMemberListPage,
+          pageName: "Member List Page",
+        },
+      ],
+      route: "gramedia",
+      githubLink: "https://github.com/ThomasAlvin/loto-workflow-demo",
+      demoLink: "https://loto-workflow-demo.netlify.app/",
+    },
+    {
+      id: 2,
       title: "E-Commerce Admin Panel",
+      projectType: "Group",
+      techStacks: [
+        "React",
+        "HTML",
+        "CSS",
+        "Javascript",
+        "Bootstrap",
+        "Laravel",
+        "PHP",
+        "MySQL",
+      ],
+      description:
+        "Digipas Store is an e-Commerce platform designed to sell Digipas precision measurement tools and accessories. Built with performance, usability, and security in mind, the platform provides a smooth shopping experience for customers while integrating seamlessly with backend systems for order fulfillment and shipping, fully integrated seamlessly with Stripe for payment management and EasyPost for shipping logistics.",
+      projectImages: [
+        {
+          id: 1,
+          image: digipasStoreProductDetailsPage16x9,
+          pageName: "Product Details Page",
+        },
+        {
+          id: 2,
+          image: digipasStoreMyCartPage16x9,
+          pageName: "My Cart Page",
+        },
+        {
+          id: 3,
+          image: digipasStoreCheckoutPage16x9,
+          pageName: "Checkout Page",
+        },
+        {
+          id: 4,
+          image: digipasStoreMyOrdersPage,
+          pageName: "My Orders Page",
+        },
+      ],
+      route: "digipas-e-commerce",
+    },
+    {
+      id: 3,
+      title: "E-Commerce with Stripe",
+      projectType: "Group",
       techStacks: [
         "React",
         "Chakra UI",
@@ -1207,48 +1352,12 @@ function MyProjectsSection({ id, onActive }) {
           pageName: "Orders Details Page",
         },
       ],
+      route: "digipas-admin-panel",
     },
     {
-      id: 2,
-      title: "E-Commerce with Stripe & EasyPost",
-      techStacks: [
-        "Laravel",
-        "PHP",
-        "HTML",
-        "CSS",
-        "Javascript",
-        "Tailwind CSS",
-        "Bootstrap",
-        "MySQL",
-      ],
-      description:
-        "Digipas Store is an e-Commerce platform designed to sell Digipas precision measurement tools and accessories. Built with performance, usability, and security in mind, the platform provides a smooth shopping experience for customers while integrating seamlessly with backend systems for order fulfillment and shipping, fully integrated seamlessly with Stripe for payment management and EasyPost for shipping logistics.",
-      projectImages: [
-        {
-          id: 1,
-          image: digipasStoreProductDetailsPage16x9,
-          pageName: "Product Details Page",
-        },
-        {
-          id: 2,
-          image: digipasStoreMyCartPage16x9,
-          pageName: "My Cart Page",
-        },
-        {
-          id: 3,
-          image: digipasStoreCheckoutPage16x9,
-          pageName: "Checkout Page",
-        },
-        {
-          id: 4,
-          image: digipasStoreMyOrdersPage,
-          pageName: "My Orders Page",
-        },
-      ],
-    },
-    {
-      id: 3,
+      id: 4,
       title: "Gramedia Book Store Copy",
+      projectType: "Group",
       techStacks: [
         "React",
         "Chakra UI",
@@ -1282,6 +1391,7 @@ function MyProjectsSection({ id, onActive }) {
           pageName: "Profile Page",
         },
       ],
+      route: "gramedia",
     },
   ];
   const ref = useRef(null);
@@ -1293,131 +1403,55 @@ function MyProjectsSection({ id, onActive }) {
     }
   }, [isInView, id, onActive]);
   return (
-    <Flex
-      id="projects"
-      color={"black"}
-      backgroundImage={`${CubeBackground}`}
-      zIndex={2}
-      position={"relative"}
-      w={"100%"}
-      flexDir={"column"}
-      pt={"60px"}
-      pb={"120px"}
-      justify={"center"}
-      alignItems={"center"}
-      gap={"40px"}
-    >
+    <>
       <Flex
+        id="projects"
         color={"black"}
-        maxW={"1200px"}
+        backgroundImage={`${CubeBackground}`}
+        zIndex={2}
+        position={"relative"}
         w={"100%"}
+        flexDir={"column"}
+        pt={"60px"}
+        pb={"60px"}
         justify={"center"}
         alignItems={"center"}
-        flexDir={"column"}
-        gap={"80px"}
+        gap={"40px"}
       >
         <Flex
-          ref={ref}
-          justify={"center"}
-          width={"fit-content"}
-          position={"relative"}
-          flexDir={"column"}
-          alignItems={"center"}
-        >
-          <Flex className="reveal">
-            <Heading fontSize={{ base: "40px", sm: "48px" }}>
-              My Projects
-            </Heading>
-          </Flex>
-          <Flex
-            pos={"absolute"}
-            bottom={"-5px"}
-            w={"120px"}
-            h={"5px"}
-            bg="linear-gradient(to right,rgb(255, 64, 83), #bf081a)"
-            className="revealUnderlineLeft"
-          />
-        </Flex>
-        <Flex
+          color={"black"}
+          maxW={"1200px"}
           w={"100%"}
-          px={"20px"}
+          justify={"center"}
+          alignItems={"center"}
           flexDir={"column"}
-          gap={{ base: "100px", sm: "150px" }}
+          gap={"40px"}
         >
-          {myProjects.map((val) => (
-            <Center alignItems={"center"}>
-              <Flex
-                alignItems={"center"}
-                flexDir={{ base: "column", lg: "row" }}
-                w={"100%"}
-                gap={{ base: "60px", lg: "40px" }}
-              >
-                <Flex
-                  flex={1}
-                  w={"100%"}
-                  flexDir={"column"}
-                  position={"relative"}
-                  gap={"20px"}
-                >
-                  <CardStack items={val.projectImages} />
-                </Flex>
-                <Flex
-                  flex={1}
-                  maxW={"800px"}
-                  flexDir={"column"}
-                  justify={"space-between"}
-                >
-                  <Flex flexDir={"column"} gap={"20px"}>
-                    <Heading
-                      className="revealLeft"
-                      bg="linear-gradient(to right,rgb(255, 64, 83), #bf081a)"
-                      bgClip={"text"}
-                      fontSize={{ base: "24px", sm: "32px" }}
-                      color={"#dc143c"}
-                    >
-                      {val.title}
-                    </Heading>
-                    <Flex
-                      gap={"10px"}
-                      flexWrap={"wrap"}
-                      className="revealLeft-500"
-                    >
-                      {val.techStacks.map((val) => (
-                        <Flex
-                          whiteSpace={"nowrap"}
-                          bg={"#dedede"}
-                          borderRadius={"10px"}
-                          color={"#373740"}
-                          fontSize={"14px"}
-                          px={"10px"}
-                          py={"2px"}
-                        >
-                          {val}
-                        </Flex>
-                      ))}
-                    </Flex>
-                    <Flex className="revealLeft-1000" color={"black"}>
-                      {val.description}
-                    </Flex>
-                  </Flex>
-                  {/* <Flex className="reveal3" gap={"10px"} alignItems={"center"}>
-                    <Button
-                      className="animated-fillColor-dark"
-                      h={"auto"}
-                      px={"28px"}
-                      py={"10px"}
-                      borderRadius={"50px"}
-                      fontSize={"18px"}
-                    >
-                      View Project
-                    </Button>
-                  </Flex> */}
-                </Flex>
-              </Flex>
-            </Center>
-          ))}
+          <Flex
+            ref={ref}
+            justify={"center"}
+            width={"fit-content"}
+            position={"relative"}
+            flexDir={"column"}
+            alignItems={"center"}
+          >
+            <Flex className="reveal">
+              <Heading fontSize={{ base: "40px", sm: "48px" }}>
+                My Projects
+              </Heading>
+            </Flex>
+            <Flex
+              pos={"absolute"}
+              bottom={"-5px"}
+              w={"120px"}
+              h={"5px"}
+              bg="linear-gradient(to right,rgb(255, 64, 83), #bf081a)"
+              className="revealUnderlineLeft"
+            />
+          </Flex>
+          <StickyScroll myProjects={myProjects} />
         </Flex>
       </Flex>
-    </Flex>
+    </>
   );
-}
+});
