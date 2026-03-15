@@ -1254,7 +1254,7 @@ const MyProjectsSection = memo(({ id, onActive }) => {
         "MySQL",
       ],
       description:
-        "LOTO Management System is a full-featured web application designed to streamline and secure the Lockout/Tagout (LOTO) safety process used in industrial environments. This system ensures compliance with safety regulations by guiding users through a standardized, multi-step procedure for isolating hazardous energy during maintenance and servicing operations.",
+        "LOTO Management System is a full-featured web application developed from the ground up and designed to streamline and secure the Lockout/Tagout (LOTO) safety process used in industrial environments. This system ensures compliance with safety regulations by guiding users through a standardized, multi-step procedure for isolating hazardous energy during maintenance and servicing operations made from scratch.",
       projectImages: [
         {
           id: 1,
@@ -1297,7 +1297,7 @@ const MyProjectsSection = memo(({ id, onActive }) => {
         "MySQL",
       ],
       description:
-        "Digipas Store is an e-Commerce platform designed to sell Digipas precision measurement tools and accessories. Built with performance, usability, and security in mind, the platform provides a smooth shopping experience for customers while integrating seamlessly with backend systems for order fulfillment and shipping, fully integrated seamlessly with Stripe for payment management and EasyPost for shipping logistics.",
+        "Digipas Store is an e-Commerce platform developed from scratch and designed to sell Digipas precision measurement tools and accessories. Built with performance, usability, and security in mind, the platform provides a smooth shopping experience for customers while integrating seamlessly with backend systems for order fulfillment and shipping, fully integrated seamlessly with Stripe for payment management and EasyPost for shipping logistics.",
       projectImages: [
         {
           id: 1,
@@ -1337,7 +1337,7 @@ const MyProjectsSection = memo(({ id, onActive }) => {
         "MySQL",
       ],
       description:
-        "The Digipas Store Admin Panel is a secure and robust web-based management system developed to oversee and streamline operations of the Digipas e-commerce platform. The panel allows administrators to manage products, users, orders, inventory, and shipping in real time. It integrates seamlessly with Stripe for payment management and EasyPost for shipping logistics. Featuring user role control, search and filter capabilities, and dynamic dashboards.",
+        "The Digipas Store Admin Panel is a secure and robust web-based management system developed from the ground up to oversee and streamline operations of the Digipas e-commerce platform. The system enables administrators to manage products, users, orders, inventory, and shipping in real time. It integrates seamlessly with Stripe for payment processing and EasyPost for shipping logistics. The platform features role-based access control, advanced search and filtering, and dynamic administrative dashboards for operational insights.",
       projectImages: [
         {
           id: 1,
@@ -1376,7 +1376,7 @@ const MyProjectsSection = memo(({ id, onActive }) => {
         "MySQL",
       ],
       description:
-        "Gramedia Book Store is an online bookstore tailored for Gramedia’s expansive collection of books, designed to deliver a smooth and intuitive shopping experience for literature enthusiasts. The platform handles everything from discovery to checkout, integrating dynamic product handling, secure payment systems, and streamlined backend operations.",
+        "Gramedia Book Store is an online bookstore that was built from scratch and tailored for Gramedia’s expansive collection of books, designed to deliver a smooth and intuitive shopping experience for literature enthusiasts. The platform handles everything from discovery to checkout, integrating dynamic product handling, secure payment systems, and streamlined backend operations.",
       projectImages: [
         {
           id: 1,
