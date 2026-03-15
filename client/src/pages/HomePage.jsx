@@ -9,6 +9,7 @@ import {
   Icon,
   Image,
   Link as ChakraLink,
+  Spinner,
 } from "@chakra-ui/react";
 import MainLayout from "../Layouts/MainLayout";
 import FotoDiri from "../assets/images/Foto-diri-cropped3.webp";
@@ -74,9 +75,8 @@ import { StickyScroll } from "@/components/ui/StickyScroll";
 import { getSkillIcon } from "../utils/getSkillIcon";
 const MotionFlex = motion(Flex);
 export default function HomePage() {
-  const [loadedHeroImageCount, setLoadedHeroImageCount] = useState(0);
-  const allHeroImageLoaded = loadedHeroImageCount >= 2;
   const [activeSection, setActiveSection] = useState("home");
+  const [heroLoaded, setHeroLoaded] = useState(false);
 
   const navItems = useMemo(
     () => [
@@ -103,9 +103,7 @@ export default function HomePage() {
     ],
     [],
   );
-  function handleImageLoad() {
-    setLoadedHeroImageCount((prev) => prev + 1);
-  }
+
   useEffect(() => {
     ScrollReveal().reveal(".reveal", {
       origin: "bottom",
@@ -172,10 +170,25 @@ export default function HomePage() {
       reset: false, // Change to true if you want the animation to replay on scroll up
     });
   }, []);
+  useEffect(() => {
+    const images = [FotoDiri, FotoDiri2];
 
-  console.log("homePage");
-  return (
-    // return allHeroImageLoaded ? (
+    const promises = images.map((src) => {
+      const img = new window.Image();
+      img.src = src;
+      return img.decode();
+    });
+
+    Promise.all(promises)
+      .then(() => {
+        setHeroLoaded(true);
+      })
+      .catch(() => {
+        setHeroLoaded(true); // fallback if decode fails
+      });
+  }, []);
+
+  return heroLoaded ? (
     <MainLayout
       onActive={setActiveSection}
       navItems={navItems}
@@ -201,17 +214,12 @@ export default function HomePage() {
       </Flex>
       <HomeSectionNavigator />
     </MainLayout>
-    // ) : (
-    //   <Flex w={"100vw"} h={"100vh"} justify={"center"} alignItems={"center"}>
-    //     <Flex display={"none"}>
-    //       <Image onLoad={handleImageLoad} src={FotoDiri}></Image>
-    //       <Image onLoad={handleImageLoad} src={FotoDiri2}></Image>
-    //     </Flex>
-    //     <Flex>
-    //       <Spinner size={"xl"} color="#dc143c" />
-    //     </Flex>
-    //   </Flex>
-    // );
+  ) : (
+    <Flex w={"100vw"} h={"100vh"} justify={"center"} alignItems={"center"}>
+      <Flex>
+        <Spinner size={"xl"} color="#dc143c" />
+      </Flex>
+    </Flex>
   );
 }
 const HomeSection = memo(({ id, onActive }) => {
